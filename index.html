@@ -418,6 +418,8 @@
                 ? 'Model: Alma - A glamorous, captivating woman with exotic features. Use Alma\'s name and traits in the prompt.'
                 : 'Model: Victoria - Use Victoria\'s name and traits in the prompt.';
 
+            const fixedUrl = modelUrl.replace('www.dropbox.com', 'dl.dropboxusercontent.com').replace('dl=0', 'raw=1');
+                
             const payload = {
                 source: 'Web_App',
                 product_id: selectedProduct.id,
@@ -425,7 +427,7 @@
                 product: selectedProduct.title,
                 model: selectedModel,
                 collection: selectedProduct.collection,
-                model_url: modelUrl,
+                model_url: fixedUrl,
                 scene: formattedScene,
                 situation: formattedScene, // Add situation field with formatted value
                 model_prompt: modelPrompt,
